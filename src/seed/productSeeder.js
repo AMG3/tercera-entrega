@@ -1,44 +1,42 @@
 import * as dotenv from "dotenv";
 dotenv.config();
 import mongoose from "mongoose";
-import { productService } from "../models/product.js";
+import productService from "../models/product.js";
 
 mongoose.connect(process.env.MONGODB_URI);
 
 const products = [
   new productService({
-    imagePath: "https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png",
-    title: "Gothic Video Game",
-    description: "Awesome Game!!!!",
-    price: 10,
+    title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    price: 109.95,
+    picture: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
   }),
   new productService({
-    imagePath:
-      "http://eu.blizzard.com/static/_images/games/wow/wallpapers/wall2/wall2-1440x900.jpg",
-    title: "World of Warcraft Video Game",
-    description: "Also awesome? But of course it was better in vanilla ...",
-    price: 20,
+    title: "Mens Casual Premium Slim Fit T-Shirts ",
+    price: 22.3,
+    picture:
+      "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
   }),
   new productService({
-    imagePath:
-      "https://support.activision.com/servlet/servlet.FileDownload?file=00PU000000Rq6tz",
-    title: "Call of Duty Video Game",
-    description: "Meh ... nah, it's okay I guess",
-    price: 40,
+    title: "Mens Cotton Jacket",
+    price: 55.99,
+    picture: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
   }),
   new productService({
-    imagePath:
-      "https://pmcdeadline2.files.wordpress.com/2014/02/minecraft__140227211000.jpg",
-    title: "Minecraft Video Game",
-    description: "Now that is super awesome!",
-    price: 15,
+    title: "Mens Casual Slim Fit",
+    price: 15.99,
+    picture: "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
   }),
   new productService({
-    imagePath:
-      "https://d1r7xvmnymv7kg.cloudfront.net/sites_products/darksouls3/assets/img/DARKSOUL_facebook_mini.jpg",
-    title: "Dark Souls 3 Video Game",
-    description: "I died!",
-    price: 50,
+    title:
+      "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+    price: 695,
+    picture: "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+  }),
+  new productService({
+    title: "Solid Gold Petite Micropave ",
+    price: 168,
+    picture: "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
   }),
 ];
 
