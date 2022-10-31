@@ -18,7 +18,6 @@ export const checkoutTemplate = (order) => {
 };
 
 const buildCartItemsTemplate = (cart) => {
-  console.log(cart);
   let template = `
     <table>
         <tr>
@@ -29,7 +28,6 @@ const buildCartItemsTemplate = (cart) => {
   `;
 
   for (const item of Object.entries(cart.items)) {
-    console.log("Item", item);
     template += `
         <tr>
             <td>${item[1].item.description}</td>

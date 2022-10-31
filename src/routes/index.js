@@ -12,7 +12,12 @@ const router = Router();
 router.get("/", (req, res, next) => {
   const successMsg = req.flash("success")[0];
   productService.find((err, docs) => {
-    const productChunks = docs;
+    const productChunks = docs.map((doc) => ({
+      id: doc.id,
+      title: doc.title,
+      picture: doc.picture,
+      price: doc.price,
+    }));
     res.render("shop/index", {
       title: "E-commerce",
       products: productChunks,
