@@ -1,12 +1,12 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-var schema = mongoose.Schema({
-    imagePath: { type: String, required: true },
-    title: { type: String, required: true },
-    description: { type: String, required: true },
-    price: { type: Number, required: true },
+const schema = mongoose.Schema({
+  imagePath: { type: String, required: true },
+  title: { type: String, required: true },
+  description: { type: String, required: true },
+  price: { type: Number, required: true },
 });
 
-const productService = mongoose.model('Product', schema);
+const productService = mongoose.model("Product", schema);
 
 export default productService;
