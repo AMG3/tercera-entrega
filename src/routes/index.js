@@ -96,7 +96,7 @@ router.post("/checkout", isLoggedIn, function (req, res, next) {
     const order = new orderService(newOrder);
 
     console.log("Enviado a:", user.email);
-    sendEmail("anais6622@hotmail.com", "Tu orden", checkoutTemplate(newOrder));
+    sendEmail(user.email, "Tu orden", checkoutTemplate(newOrder));
 
     order.save((err, result) => {
       req.flash("success", "Compra exitosa de producto");
