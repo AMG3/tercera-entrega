@@ -1,3 +1,11 @@
+{{# if login }}
+<div class="row" style="margin-right: -91px;">
+ <div class="container-fluid" style="display: flex;justify-content: flex-end;align-items: center;">
+    <span style="font-weight: bold; font-size: 18px">Hola, {{userName}}&nbsp;</span>
+    <img src={{userPhoto}} height="40" width="40" style="border-radius: 50%;"/>
+ </div>
+</div>
+{{/if}}
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
         <h1>Perfil de usuario</h1>

@@ -1,10 +1,16 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 
-// TODO: agregar lo que tienes en el esquema del proyecto original
 const userSchema = mongoose.Schema({
   email: { type: String, required: true },
   password: { type: String, required: true },
+  first_name: { type: String, required: true },
+  last_name: { type: String, required: true },
+  address: { type: String, required: true },
+  age: Number,
+  photo: String,
+  phone_number: Number,
+  role: String,
 });
 
 userSchema.methods.encryptPassword = function (password) {
