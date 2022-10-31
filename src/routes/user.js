@@ -6,6 +6,7 @@ import passport from "passport";
 
 import orderService from "../models/order.js";
 import { Cart } from "../models/cart.js";
+import { upload } from "../middlewares/upload.js";
 
 const router = Router();
 // const csrfProtection = csrf(process.env.SECRET);
@@ -24,7 +25,11 @@ router.get("/profile", isLoggedIn, (req, res, next) => {
         items: cart.generateArray(),
       });
     });
-    res.render("user/profile", { orders: userOrders });
+    res.render("user/profile", {
+      orders: userOrders,
+      userPhoto: `../files/${req.user.photo}`,
+      userName: req.user.first_name,
+    });
   });
 });
 
@@ -52,6 +57,7 @@ router.get("/signup", (req, res, next) => {
 
 router.post(
   "/signup",
+  upload.single("user_photo"),
   passport.authenticate("local.signup", {
     failureRedirect: "/user/signup",
     failureFlash: true,
